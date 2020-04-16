@@ -1,0 +1,8 @@
+env.php
+# contains private variables
+
+adminer.php
+# is only on my local dev env
+
+setup.php
+# can be deleted and if it's not present, it may prevent git pull

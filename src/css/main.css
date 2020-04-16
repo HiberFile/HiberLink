@@ -1,0 +1,27 @@
+/* HiberLink's main.css */
+/* Under AGPL-3.0 */
+
+.center {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.copyleft {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/src/fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
+}
