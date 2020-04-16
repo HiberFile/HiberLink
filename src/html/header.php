@@ -13,6 +13,7 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     <!-- javascript -->
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
     <script src="<?php echo env('ext_url'); ?>/src/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <!-- icons -->
     <link rel="stylesheet" type="text/css" href="<?php echo env('ext_url'); ?>/src/css/main.css" />
