@@ -61,14 +61,14 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
             _paq.push(['trackPageView']);
             _paq.push(['enableLinkTracking']);
             (function() {
-                var u="<?php echo env('matomo_url'); ?>/";
+                var u="<?php echo env('matomo_url'); ?>";
                 _paq.push(['setTrackerUrl', u+'matomo.php']);
                 _paq.push(['setSiteId', '<?php echo env('matomo_siteid'); ?>']);
                 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
                 g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
             })();
         </script>
-        <noscript><p><img src="<?php echo env('matomo_url'); ?>/matomo.php?idsite=<?php echo env('matomo_siteid'); ?>&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+        <noscript><p><img src="<?php echo env('matomo_url'); ?>matomo.php?idsite=<?php echo env('matomo_siteid'); ?>&amp;rec=1" style="border:0;" alt="" /></p></noscript>
         <!-- End Matomo Code -->
         <?php
     }
