@@ -1,5 +1,6 @@
 <?php
 
+require "autoload.php";
 require "src/html/header.php";
 ?>
             <main class="main">
