@@ -10,7 +10,7 @@ add_header();
                     <div class="overflow-scroll py-8 px-12">
                             <span>Voici absolument tout ce que vous devez savoir sur le service de réduction de liens <?= env("title") ?>.</span></p>
                         <ul class="mt-6 leading-normal">
-                            <li class="mb-4"><b><u>Open Source</u></b>: <?= env("title") ?> est Open Source et vous pouvez retrouver le code source à <a href="https://github.com/hiberfile/hiberlink">cette adresse</a>.</li>
+                            <li class="mb-4"><b><u>Open Source</u></b>: <?= env("title") ?> est Open Source et vous pouvez retrouver le code source à <u><a href="https://github.com/hiberfile/hiberlink">cette adresse</a></u>.</li>
                             <li class="mb-4"><b><u>Stockage</u></b>: <?= env("title") ?> reçoit votre lien et le transmet à une base de donnée MySQL, qui s'en charge de le stocker.</li>
                             <li class="mb-4"><b><u>Données Personnelle</u></b>: Voici les données récoltées pour garantir le fonctionnement de <?= env("title") ?>:</li>
                                 <ul class="mt-6 leading-normal">
