@@ -1,5 +1,5 @@
 <?php
-require "autoload.php";
+
 if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     header("Status: 301 Moved Permanently", false, 301);
     header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");

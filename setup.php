@@ -1,7 +1,10 @@
 <?php
 
 require "autoload.php";
-require "src/html/header.php";
+
+if (! is_curl()) {
+    require "src/html/header.php";
+}
 
 $dsn = "mysql:host=" . env("mysql_address") . ";dbname=" . env("mysql_databse") . ";port=".env("mysql_port").";charset=utf8mb4";
 $options = [
@@ -31,4 +34,6 @@ try {
     }
 }
 
-require "src/html/footer.php";
+if (! is_curl()) {
+    require "src/html/footer.php";
+}

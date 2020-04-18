@@ -48,6 +48,7 @@ if (sizeof($argument) === 2 & strlen($argument[1]) === 8) {
                     </form>
     <?php
 }
+
 if (! is_curl()) {
     require "src/html/footer.php";
 }
