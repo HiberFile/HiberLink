@@ -24,15 +24,17 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
         }
     }
 
-    function is_curl() {
-        # is the page being curl'd, wget'd or shown thru a browser ?
-        if (stristr($_SERVER["HTTP_USER_AGENT"], 'curl')) {
-            # page is cURL'd
-            return True;
+    if (!function_exists("is_curl")) {
+        function is_curl() {
+            # is the page being curl'd, wget'd or shown thru a browser ?
+            if (stristr($_SERVER["HTTP_USER_AGENT"], 'curl')) {
+                # page is cURL'd
+                return True;
 
-        } else {
-            # page is being accessed from a web browser
-            return False;
+            } else {
+                # page is being accessed from a web browser
+                return False;
+            }
         }
     }
 }

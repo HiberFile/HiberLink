@@ -1,6 +1,7 @@
 <?php
 
 require "autoload.php";
+
 if (! is_curl()) {
     require "src/html/header.php";
 }
