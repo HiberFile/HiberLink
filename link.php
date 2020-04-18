@@ -86,12 +86,12 @@ if (isset($_POST["link"])) {
             echo env("ext_url")."/?".$id;
         }
 
-    } elseif (! isset($_POST["link"]) && ! is_curl()) {
+    } elseif (! $valid_url && ! is_curl()) {
         ?>
         <div class="center"><h4>Lien invalide.</h4></div>
         <a class="btn rounded-lg flex items-center mt-2" href="<?php echo env("ext_url"); ?>">Revenir à l'accueil</a>
         <?php
-    } elseif (! isset($_POST["link"]) && is_curl()) {
+    } elseif (! $valid_url && is_curl()) {
         echo "erreur";
     }
 
