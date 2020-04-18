@@ -13,7 +13,6 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
         die();
     }
 
-    // <env function to get env vars>
     if (!function_exists("env")) {
         function env($key, $default = null)
         {
@@ -24,5 +23,16 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
             return $value;
         }
     }
-    // </env function to get env vars>
+
+    function is_curl() {
+        # is the page being curl'd, wget'd or shown thru a browser ?
+        if (stristr($_SERVER["HTTP_USER_AGENT"], 'curl')) {
+            # page is cURL'd
+            return True;
+
+        } else {
+            # page is being accessed from a web browser
+            return False;
+        }
+    }
 }

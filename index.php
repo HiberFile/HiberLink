@@ -1,5 +1,9 @@
 <?php
+
 require "autoload.php";
+if (! is_curl()) {
+    require "src/html/header.php";
+}
 
 $argument = preg_split('/[\/].*[?]/', $_SERVER["REQUEST_URI"]);
 if (sizeof($argument) === 2 & strlen($argument[1]) === 8) {
@@ -22,17 +26,16 @@ if (sizeof($argument) === 2 & strlen($argument[1]) === 8) {
 
     $row = $req->fetch();
     if (isset($row['original'])) {
+        echo $row['original'];
         header("Status: 301 Moved Permanently", false, 301);
         header("Location: ".$row['original']);
     } else {
-        require "src/html/header.php";
         ?>
         <div class="center"><h4>Ce lien n'existe pas.</h4></div>
+        <a class="btn rounded-lg flex items-center mt-2" href="<?php echo env("ext_url"); ?>">Revenir à l'accueil</a>
         <?php
-        require "src/html/footer.php";
     }
 } else {
-    require "src/html/header.php";
     ?>
                     <img src="<?php echo env('ext_url'); ?>/src/img/add.png" alt="+">
                     <div class="center"><h4>Transformez votre lien dès maintenant.</h4></div>
@@ -43,5 +46,7 @@ if (sizeof($argument) === 2 & strlen($argument[1]) === 8) {
                         </center>
                     </form>
     <?php
+}
+if (! is_curl()) {
     require "src/html/footer.php";
 }

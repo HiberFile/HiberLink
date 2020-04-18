@@ -1,7 +1,9 @@
 <?php
 
 require "autoload.php";
-require "src/html/header.php";
+if (! is_curl()) {
+    require "src/html/header.php";
+}
 
 // https://stackoverflow.com/a/31107425/10503297
 function random_str(int $length = 8, string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'): string {
@@ -52,12 +54,14 @@ if (isset($_POST["link"])) {
         $req->execute([$id]);
 
         $row = $req->fetch();
-        if (! isset($row['original'])) {
+        if (! isset($row['original']) && ! is_curl()) {
             ?>
             <div class="center"><h4>Une erreur inconnue est survenue.</h4></div>
-            <small class="center">Retourner à la <u><a href="<?php echo env("ext_url"); ?>">page principale</a></u></small>
+            <a class="btn rounded-lg flex items-center mt-2" href="<?php echo env("ext_url"); ?>">Revenir à l'accueil</a>
             <?php
-        } else {
+        } elseif (! isset($row['original']) && is_curl()) {
+            echo "erreur";
+        } elseif (isset($row['original']) && ! is_curl()) {
             ?>
             <img src="<?php echo env("ext_url"); ?>/src/img/ok.png" alt="ok">
             <p class="center"><h4>Votre lien est prêt. Partagez le dès maintenant.</h4></p>
@@ -67,18 +71,23 @@ if (isset($_POST["link"])) {
             <button class="btn rounded-lg flex items-center mt-2" onclick="copytoclipboard();" >Copier dans le presse-papier</button>
             <a class="btn rounded-lg flex items-center mt-2" href="<?php echo env("ext_url"); ?>">Revenir à l'accueil</a>
             <?php
+        } elseif (isset($row['original']) && is_curl()) {
+            echo env("ext_url")."/?".$id;
         }
 
-    } else {
+    } elseif (! isset($_POST["link"]) && ! is_curl()) {
         ?>
         <div class="center"><h4>Lien invalide.</h4></div>
-        <small class="center">Retourner à la <u><a href="<?php echo env("ext_url"); ?>">page principale</a></u></small>
+        <a class="btn rounded-lg flex items-center mt-2" href="<?php echo env("ext_url"); ?>">Revenir à l'accueil</a>
         <?php
+    } elseif (! isset($_POST["link"]) && is_curl()) {
+        echo "erreur:";
     }
 
 } else {
     header("Status: 301 Moved Permanently", false, 301);
     header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 }
-
-require "src/html/footer.php";
+if (! is_curl()) {
+    require "src/html/footer.php";
+}
