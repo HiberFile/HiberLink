@@ -62,7 +62,7 @@ if (isset($_POST["link"])) {
             echo "erreur";
         } elseif (isset($row['original']) && ! is_curl()) {
             ?>
-            <img src="<?php echo env("ext_url"); ?>/src/img/ok.png" alt="ok">
+            <img src="<?php echo env("ext_url"); ?>/src/img/ok.png" width="48" alt="ok">
             <p class="center"><h4>Votre lien est prêt. Partagez le dès maintenant.</h4></p>
             <center>
                 <input type="text" id="lien" class=" border rounded-lg w-full px-2 py-1 h-14 mb-3 text-lg text-grey-darker leading-loose" value="<?php echo env("ext_url")."/?".$id; ?>">

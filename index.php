@@ -36,7 +36,7 @@ if (sizeof($argument) === 2 & strlen($argument[1]) === 8) {
     }
 } else {
     ?>
-                    <img src="<?php echo env('ext_url'); ?>/src/img/add.png" alt="+">
+                    <img src="<?php echo env('ext_url'); ?>/src/img/add.png" width="48" alt="+">
                     <div class="center"><h4>Transformez votre lien dès maintenant.</h4></div>
                     <form method="post" action="<?php echo env('ext_url'); ?>/link.php">
                         <center>
