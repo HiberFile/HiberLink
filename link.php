@@ -20,7 +20,7 @@ function random_str(int $length = 8, string $keyspace = '0123456789abcdefghijklm
 if (isset($_POST["link"])) {
     $link = $_POST["link"];
 
-    if (filter_var($link, FILTER_VALIDATE_DOMAIN)) {
+    if (filter_var($link, FILTER_VALIDATE_DOMAIN) && ! stristr($link, 'http')) {
         $link = "https://" . $link;
     }
 
