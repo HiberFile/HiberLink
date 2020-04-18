@@ -68,19 +68,19 @@ if (isset($_POST["link"])) {
         if (! isset($row['original']) && ! is_curl()) {
             ?>
             <div class="center"><h4>Une erreur inconnue est survenue.</h4></div>
-            <a class="btn rounded-lg flex items-center mt-2" href="<?php echo env("ext_url"); ?>">Revenir à l'accueil</a>
+            <a class="btn rounded-lg flex items-center mt-2" href="<?= env("ext_url") ?>">Revenir à l'accueil</a>
             <?php
         } elseif (! isset($row['original']) && is_curl()) {
             echo "erreur";
         } elseif (isset($row['original']) && ! is_curl()) {
             ?>
-            <img src="<?php echo env("ext_url"); ?>/src/img/ok.png" width="48" alt="ok">
+            <img src="<?= env("ext_url") ?>/src/img/ok.png" width="48" alt="ok">
             <p class="center"><h4>Votre lien est prêt. Partagez le dès maintenant.</h4></p>
             <center>
-                <input type="text" id="lien" class=" border rounded-lg w-full px-2 py-1 h-14 mb-3 text-lg text-grey-darker leading-loose" value="<?php echo env("ext_url")."/?".$id; ?>">
+                <input type="text" id="lien" class=" border rounded-lg w-full px-2 py-1 h-14 mb-3 text-lg text-grey-darker leading-loose" value="<?= env("ext_url")."/?".$id ?>">
             </center>
             <button class="btn rounded-lg flex items-center mt-2" onclick="copytoclipboard();" >Copier dans le presse-papier</button>
-            <a class="btn rounded-lg flex items-center mt-2" href="<?php echo env("ext_url"); ?>">Revenir à l'accueil</a>
+            <a class="btn rounded-lg flex items-center mt-2" href="<?= env("ext_url") ?>">Revenir à l'accueil</a>
             <?php
         } elseif (isset($row['original']) && is_curl()) {
             echo env("ext_url")."/?".$id;
@@ -89,7 +89,7 @@ if (isset($_POST["link"])) {
     } elseif (! $valid_url && ! is_curl()) {
         ?>
         <div class="center"><h4>Lien invalide.</h4></div>
-        <a class="btn rounded-lg flex items-center mt-2" href="<?php echo env("ext_url"); ?>">Revenir à l'accueil</a>
+        <a class="btn rounded-lg flex items-center mt-2" href="<?= env("ext_url") ?>">Revenir à l'accueil</a>
         <?php
     } elseif (! $valid_url && is_curl()) {
         echo "erreur";
