@@ -2,9 +2,7 @@
 
 require "autoload.php";
 
-if (! is_curl()) {
-    require "src/html/header.php";
-}
+add_header();
 
 $argument = preg_split('/[\/].*[?]/', $_SERVER["REQUEST_URI"]);
 if (sizeof($argument) === 2 & strlen($argument[1]) === 8) {
@@ -49,6 +47,4 @@ if (sizeof($argument) === 2 & strlen($argument[1]) === 8) {
     <?php
 }
 
-if (! is_curl()) {
-    require "src/html/footer.php";
-}
+add_footer();

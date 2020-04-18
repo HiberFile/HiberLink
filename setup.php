@@ -2,9 +2,7 @@
 
 require "autoload.php";
 
-if (! is_curl()) {
-    require "src/html/header.php";
-}
+add_header();
 
 $dsn = "mysql:host=" . env("mysql_address") . ";dbname=" . env("mysql_databse") . ";port=".env("mysql_port").";charset=utf8mb4";
 $options = [
@@ -34,6 +32,4 @@ try {
     }
 }
 
-if (! is_curl()) {
-    require "src/html/footer.php";
-}
+add_footer();

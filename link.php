@@ -2,9 +2,7 @@
 
 require "autoload.php";
 
-if (! is_curl()) {
-    require "src/html/header.php";
-}
+add_header();
 
 // https://stackoverflow.com/a/31107425/10503297
 function random_str(int $length = 8, string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'): string {
@@ -89,6 +87,5 @@ if (isset($_POST["link"])) {
     header("Status: 301 Moved Permanently", false, 301);
     header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 }
-if (! is_curl()) {
-    require "src/html/footer.php";
-}
+
+add_footer();

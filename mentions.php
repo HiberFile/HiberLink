@@ -1,7 +1,9 @@
 <?php
 
 require "autoload.php";
-require "src/html/header.php";
+
+add_header();
+
 ?>
                 <h1 class="center">Mentions légales - <?php echo env("title"); ?></h1>
                     <p class="mt-2">Version 1.0 du 17 Avril 2020</p>
@@ -44,4 +46,4 @@ require "src/html/header.php";
                     </div>
 <?php
 
-require "src/html/footer.php";
+add_footer();
