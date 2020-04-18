@@ -31,14 +31,14 @@ if (sizeof($argument) === 2 & strlen($argument[1]) === 8) {
     } else {
         ?>
         <div class="center"><h4>Ce lien n'existe pas.</h4></div>
-        <a class="btn rounded-lg flex items-center mt-2" href="<?php echo env("ext_url"); ?>">Revenir à l'accueil</a>
+        <a class="btn rounded-lg flex items-center mt-2" href="<?= env("ext_url") ?>">Revenir à l'accueil</a>
         <?php
     }
 } else {
     ?>
-                    <img src="<?php echo env('ext_url'); ?>/src/img/add.png" width="48" alt="+">
+                    <img src="<?= env('ext_url') ?>/src/img/add.png" width="48" alt="+">
                     <div class="center"><h4>Transformez votre lien dès maintenant.</h4></div>
-                    <form method="post" action="<?php echo env('ext_url'); ?>/link.php">
+                    <form method="post" action="<?= env('ext_url') ?>/link.php">
                         <center>
                             <input placeholder="Lien original" type="text" name="link" class="border rounded-lg w-full px-2 py-1 h-14 mb-3 text-lg text-grey-darker leading-loose" required>
                             <input id="buttonsend" type="submit" value="Transformation" name="submit" class="btn rounded-lg flex items-center mt-2">
