@@ -8,7 +8,7 @@ HiberLink est un service de reduction de lien gratuit, open source, libre et res
 ### `/link.php`
 #### Exemple
 ```bash
-curl --user-agent "curl" -X POST example.com/link.php --data="link=https://github.com"
+curl --user-agent "curl" -X POST example.com/link.php --data "link=https://github.com"
 ```
 **Tous les paramètre sont requis peu importe la librairie utilisée.**
 
