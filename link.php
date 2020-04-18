@@ -26,9 +26,7 @@ if (isset($_POST["link"])) {
         $link = "https://" . $link;
     }
 
-    if (filter_var($link, FILTER_VALIDATE_URL) and filter_var($link, FILTER_VALIDATE_IP)) {
-        $valid_url = true;
-    } elseif (filter_var($link, FILTER_VALIDATE_URL) and filter_var($link, FILTER_VALIDATE_DOMAIN)) {
+    if (filter_var($link, FILTER_VALIDATE_URL)) {
         $valid_url = true;
     } else {
         $valid_url = false;
