@@ -23,5 +23,5 @@ body {
     font-style: normal;
     font-weight: 300;
     font-display: swap;
-    src: url('/src/fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
+    src: url('../fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
 }
