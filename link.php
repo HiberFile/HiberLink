@@ -20,6 +20,10 @@ function random_str(int $length = 8, string $keyspace = '0123456789abcdefghijklm
 if (isset($_POST["link"])) {
     $link = $_POST["link"];
 
+    if (filter_var($link, FILTER_VALIDATE_DOMAIN)) {
+        $link = "https://" . $link;
+    }
+
     if (filter_var($link, FILTER_VALIDATE_URL)) {
         $dsn = "mysql:host=" . env("mysql_address") . ";dbname=" . env("mysql_databse") . ";port=".env("mysql_port").";charset=utf8mb4";
         $options = [
@@ -80,7 +84,7 @@ if (isset($_POST["link"])) {
         <a class="btn rounded-lg flex items-center mt-2" href="<?php echo env("ext_url"); ?>">Revenir à l'accueil</a>
         <?php
     } elseif (! isset($_POST["link"]) && is_curl()) {
-        echo "erreur:";
+        echo "erreur";
     }
 
 } else {
