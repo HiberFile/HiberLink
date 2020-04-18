@@ -53,7 +53,7 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     <title><?php echo env('title'); ?></title>
 
     <?php
-    if (env("matomo") === true) {
+    if (env("matomo") == true) {
         ?>
         <!-- Matomo -->
         <script type="text/javascript">
