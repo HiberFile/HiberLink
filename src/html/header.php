@@ -15,9 +15,11 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     <script src="<?php echo env('ext_url'); ?>/src/js/main.js"></script>
     <script src="<?php echo env('ext_url'); ?>/src/js/sweetalert.js"></script>
 
-    <!-- icons -->
-    <link rel="stylesheet" type="text/css" href="<?php echo env('ext_url'); ?>/src/css/main.css" />
+    <!-- css -->
     <link rel="stylesheet" type="text/css" href="<?php echo env('ext_url'); ?>/src/css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo env('ext_url'); ?>/src/css/main.css" />
+
+    <!-- icons -->
     <link rel="apple-touch-icon" href="<?php echo env('ext_url'); ?>/src/img/logo.png"/>
     <link rel="icon" href="<?php echo env('ext_url'); ?>/src/img/favicon.ico"/>
 
