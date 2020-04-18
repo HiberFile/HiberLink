@@ -8,18 +8,18 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
 } else {
     ?>
 <!DOCTYPE html>
-<html lang="<?php echo env('lang'); ?>">
+<html lang="<?php echo env('lang'); ?>" prefix="og: http://ogp.me/ns#">
 <head>
     <!-- javascript -->
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+    <script src="<?php echo env('ext_url'); ?>/src/js/clipboard.js"></script>
     <script src="<?php echo env('ext_url'); ?>/src/js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="<?php echo env('ext_url'); ?>/src/js/sweetalert.js"></script>
 
     <!-- icons -->
     <link rel="stylesheet" type="text/css" href="<?php echo env('ext_url'); ?>/src/css/main.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo env('ext_url'); ?>/src/css/normalize.css"/>
     <link rel="apple-touch-icon" href="<?php echo env('ext_url'); ?>/src/img/logo.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo env('ext_url'); ?>/src/img/favicon.ico"/>
+    <link rel="icon" href="<?php echo env('ext_url'); ?>/src/img/favicon.ico"/>
 
     <!-- meta -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,7 +51,7 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     <title><?php echo env('title'); ?></title>
 
     <?php
-    if (env("matomo") == true) {
+    if (env("matomo") === true) {
         ?>
         <!-- Matomo -->
         <script type="text/javascript">
