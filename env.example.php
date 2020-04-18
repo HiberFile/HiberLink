@@ -11,6 +11,7 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
         'title' => 'HiberLink', // site name
         'lang' => 'fr', // ISO code of site language
         'ext_url' => 'https://l.hiberfile.com', // External URL !!! Don't put '/' at the end
+        'char_per_id' => 8, // Number of characters to use per link ID
         #</general>
 
         #<matomo>

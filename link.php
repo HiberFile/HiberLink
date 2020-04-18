@@ -5,7 +5,7 @@ require "autoload.php";
 add_header();
 
 // https://stackoverflow.com/a/31107425/10503297
-function random_str(int $length = 8, string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'): string {
+function random_str(int $length, string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'): string {
     if ($length < 1) {
         throw new \RangeException("Length must be a positive integer");
     }
@@ -47,7 +47,7 @@ if (isset($_POST["link"])) {
         }
 
         while (true) {
-            $id = random_str();
+            $id = random_str(env("char_per_id"));
             $req = $pdo->prepare("select * from LINKS where id = ?");
             $req->execute([$id]);
 

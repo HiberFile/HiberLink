@@ -5,7 +5,7 @@ require "autoload.php";
 add_header();
 
 $argument = preg_split('/[\/].*[?]/', $_SERVER["REQUEST_URI"]);
-if (sizeof($argument) === 2 & strlen($argument[1]) === 8) {
+if (sizeof($argument) === 2) {
     $argument = $argument[1];
     $dsn = "mysql:host=" . env("mysql_address") . ";dbname=" . env("mysql_databse") . ";port=".env("mysql_port").";charset=utf8mb4";
     $options = [
