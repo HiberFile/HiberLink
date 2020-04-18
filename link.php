@@ -22,9 +22,19 @@ if (isset($_POST["link"])) {
 
     if (filter_var($link, FILTER_VALIDATE_DOMAIN) && ! stristr($link, 'http')) {
         $link = "https://" . $link;
+    } elseif (filter_var($link, FILTER_VALIDATE_IP) && ! stristr($link, 'http')) {
+        $link = "https://" . $link;
     }
 
-    if (filter_var($link, FILTER_VALIDATE_URL)) {
+    if (filter_var($link, FILTER_VALIDATE_URL) and filter_var($link, FILTER_VALIDATE_IP)) {
+        $valid_url = true;
+    } elseif (filter_var($link, FILTER_VALIDATE_URL) and filter_var($link, FILTER_VALIDATE_DOMAIN)) {
+        $valid_url = true;
+    } else {
+        $valid_url = false;
+    }
+
+    if ($valid_url) {
         $dsn = "mysql:host=" . env("mysql_address") . ";dbname=" . env("mysql_databse") . ";port=".env("mysql_port").";charset=utf8mb4";
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
