@@ -4,7 +4,11 @@
 HiberLink est un service de reduction de lien gratuit, open source, libre et respectueux de la vie privée de ses utilisateurs.
 <br>Le service a été créé par l'équipe derrière [HiberFile](https://hiberfile.com).
 
-## "API"
+## API
+### Applications utilisant notre API (<3)
+- [HiberFile iOS](https://github.com/GroupeMINASTE/HiberLink-iOS) par le [Groupe MINASTE](https://github.com/GroupeMINASTE)
+- [Hiber.sh](https://github.com/jusdepatate/pieces-of-code/tree/master/hiber.sh) par [@jusdepatate](https://github.com/jusdepatate)
+
 ### `/link.php`
 #### Exemple
 ```bash
