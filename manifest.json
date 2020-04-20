@@ -3,6 +3,8 @@
  "short_name": "HiberLink",
  "lang": "fr-FR",
  "start_url": "/",
+ "background_color": "#2c3e50",
+ "theme_color": "#18bc9c",
  "display": "standalone",
  
  "icons": [
