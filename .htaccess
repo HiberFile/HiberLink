@@ -1,3 +1,7 @@
 Options -Indexes
 
 DirectoryIndex index.php
+
+<Files "apple-app-site-association">
+  ForceType 'application/json'
+</Files>
