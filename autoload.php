@@ -41,7 +41,9 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     if (!function_exists("get_current_git_commit")) {
         # https://gist.github.com/stevegrunwell/3363975
         function get_current_git_commit(string $branch = 'master', bool $pretty = false) {
-            if ($hash = file_get_contents(sprintf('.git/refs/heads/%s', $branch))) {
+            if (file_get_contents(sprintf('.git/refs/heads/%s', $branch))) {
+                $hash = file_get_contents(sprintf('.git/refs/heads/%s', $branch));
+                
                 if ($pretty) {
                     return substr($hash, 0, 7);
                 } else {

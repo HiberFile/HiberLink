@@ -1,4 +1,6 @@
 # HiberLink
+[![CodeFactor](https://www.codefactor.io/repository/github/hiberfile/hiberlink/badge)](https://www.codefactor.io/repository/github/hiberfile/hiberlink)
+
 *(HiberLink will probably be translated in English, but for now most of the things are in French, sorry)*
 
 HiberLink est un service de reduction de lien gratuit, open source, libre et respectueux de la vie privée de ses utilisateurs.
