@@ -24,6 +24,9 @@ if (sizeof($argument) === 2) {
 
     $row = $req->fetch();
     if (isset($row['original'])) {
+        if (is_curl()) {
+            die($row['original']);
+        }
         header("Status: 301 Moved Permanently", true, 301);
         header("Location: ".$row['original']);
         add_header();
