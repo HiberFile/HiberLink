@@ -20,20 +20,18 @@ function random_str(int $length, string $keyspace = '0123456789abcdefghijklmnopq
 if (isset($_POST["link"])) {
     $link = $_POST["link"];
 
-    if (filter_var($link, FILTER_VALIDATE_DOMAIN) && ! stristr($link, 'http')) {
-        $link = "https://" . $link;
-    } elseif (filter_var($link, FILTER_VALIDATE_IP) && ! stristr($link, 'http')) {
-        $link = "https://" . $link;
-    }
-
-    if (filter_var($link, FILTER_VALIDATE_URL)) {
+    if (preg_match("/^((([a-zA-Z]+)|([0-9]))\.)+(([a-zA-Z]+)|([0-9]))/", $link)) {
         $valid_url = true;
     } else {
         $valid_url = false;
     }
 
+    if (! stristr($link, 'http')) {
+        $link = "https://" . $link;
+    }
+
     if ($valid_url) {
-        $dsn = "mysql:host=" . env("mysql_address") . ";dbname=" . env("mysql_databse") . ";port=".env("mysql_port").";charset=utf8mb4";
+        $dsn = "mysql:host=" . env("mysql_address") . ";dbname=" . env("mysql_database") . ";port=".env("mysql_port").";charset=utf8mb4";
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
