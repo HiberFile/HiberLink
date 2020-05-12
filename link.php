@@ -20,7 +20,7 @@ function random_str(int $length, string $keyspace = '0123456789abcdefghijklmnopq
 if (isset($_POST["link"])) {
     $link = $_POST["link"];
 
-    if (preg_match("/^((([a-zA-Z]+)|([0-9]))\.)+(([a-zA-Z]+)|([0-9]))/", $link)) {
+    if (preg_match("/((([a-zA-Z]+)|([0-9]))\.)+(([a-zA-Z]+)|([0-9]))/", $link)) {
         $valid_url = true;
     } else {
         $valid_url = false;
