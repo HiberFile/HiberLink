@@ -3,7 +3,7 @@
 
 *(HiberLink will probably be translated in English, but for now most of the things are in French, sorry)*
 
-HiberLink est un service de reduction de lien gratuit, open source, libre et respectueux de la vie privée de ses utilisateurs.
+HiberLink est un service de réduction de lien gratuit, open source, libre et respectueux de la vie privée de ses utilisateurs.
 <br>Le service a été créé par l'équipe derrière [HiberFile](https://hiberfile.com).
 
 ## API
@@ -16,7 +16,7 @@ HiberLink est un service de reduction de lien gratuit, open source, libre et res
 ```bash
 curl --user-agent "curl" -X POST example.com/link.php --data "link=https://github.com"
 ```
-**Tous les paramètre sont requis peu importe la librairie utilisée.**
+**Tous les paramètres sont requis, peu importe la librairie utilisée.**
 
 #### Réponse
 - En cas d'erreur: `erreur`.
@@ -31,7 +31,7 @@ curl --user-agent "curl" -X POST -L example.com/index.php?IDENTIFIANT"
 ```bash
 curl --user-agent "curl" -X POST -L example.com/?IDENTIFIANT"
 ```
-**Tous les paramètre sont requis peu importe la librairie utilisée
+**Tous les paramètres sont requis, peu importe la librairie utilisée
 <br>`IDENTIFIANT` dépend a chaque requête.
 <br>La réponse se trouvera dans le header `Location` ou dans la page**
 
