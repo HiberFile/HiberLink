@@ -8,10 +8,10 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     # https://medium.com/@hfally/how-to-create-an-environment-variable-file-like-laravel-symphonys-env-37c20fc23e72
     $variables = [
         #<general>
-        'title' => 'HiberLink', // site name
-        'lang' => 'fr', // ISO code of site language
-        'ext_url' => 'https://hiber.link', // External URL !!! Don't put '/' at the end
-        'char_per_id' => 8, // Number of characters to use per link ID
+        'title' => 'HiberLink', # site name
+        'lang' => 'fr', # ISO code of site language
+        'ext_url' => 'https://hiber.link', # External URL !!! Don't put '/' at the end
+        'char_per_id' => 8, # Number of characters to use per link ID
         #</general>
 
         #<matomo>

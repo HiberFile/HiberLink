@@ -4,7 +4,7 @@ require "autoload.php";
 
 add_header();
 
-// https://stackoverflow.com/a/31107425/10503297
+# https://stackoverflow.com/a/31107425/10503297
 function random_str(int $length, string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'): string {
     if ($length < 1) {
         throw new \RangeException("Length must be a positive integer");
