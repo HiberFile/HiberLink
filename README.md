@@ -9,7 +9,8 @@ HiberLink est un service de réduction de lien gratuit, open source, libre et re
 ## API
 ### Applications utilisant notre API (<3)
 - [HiberLink iOS](https://github.com/GroupeMINASTE/HiberLink-iOS) et [HiberLink Android](https://github.com/GroupeMINASTE/HiberLink-Android) par le [Groupe MINASTE](https://github.com/GroupeMINASTE)
-- [Hiber.sh](https://github.com/jusdepatate/pieces-of-code/tree/master/hiber.sh) par [@jusdepatate](https://github.com/jusdepatate)
+- [HiberHub Desktop](https://github.com/jusdepatate/HiberHub-Deskop) par [@jusdepatate](https://github.com/jusdepatate)
+- [Hiber CLI Client](https://github.com/jusdepatate/pieces-of-code/tree/master/hiber) par [@jusdepatate](https://github.com/jusdepatate)
 
 ### `/link.php`
 #### Exemple
@@ -25,15 +26,15 @@ curl --user-agent "curl" -X POST example.com/link.php --data "link=https://githu
 ### `/index.php`
 #### Exemple
 ```bash
-curl --user-agent "curl" -X POST -L example.com/index.php?IDENTIFIANT"
+curl --user-agent "curl" -X POST -L "https://hiber.link/index.php?IDENTIFIANT"
 ```
 **ou**
 ```bash
-curl --user-agent "curl" -X POST -L example.com/?IDENTIFIANT"
+curl --user-agent "curl" -X POST -L "https://hiber.link/?IDENTIFIANT"
 ```
 **Tous les paramètres sont requis, peu importe la librairie utilisée
 <br>`IDENTIFIANT` dépend a chaque requête.
-<br>La réponse se trouvera dans le header `Location` ou dans la page**
+<br>La réponse se trouvera dans l’header `Location` ou dans la page**
 
 #### Réponse
 - En cas d'erreur: `erreur`.
@@ -50,20 +51,20 @@ curl --user-agent "curl" -X POST -L example.com/?IDENTIFIANT"
 
 - `git clone https://github.com/hiberfile/hiberlink.git`,
 - `cp env.example.php env.php`,
-- Editez `env.php` avec votre éditeur de fichiers favorit (ex: `nano env.php`),
-- `php setup.php` ou allez a la page setup à l'aide d'un navigateur (`curl` suffit par exemple),
+- Éditez `env.php` avec votre éditeur de fichiers favori (ex: `nano env.php`),
+- `php setup.php` ou allez à la page setup à l'aide d'un navigateur (`curl` suffit par exemple),
 - `rm env.example.php setup.php`.
 
 ### Variables `env.php`
 - `title` => Nom et titre du site qui sera utilisé de partout,
-- `lang` => ne sert pas à grand chose, laissez la sur `fr`,
+- `lang` => ne sert pas à grand-chose, laissez là sur `fr`,
 - `ext_url` => URL externe du serveur, **doit commencer par `https://`/`http://` et ne doit pas finir par un `/`**,
-- `char_per_id` => Nombre de charactères a utiliser sur chaque ID de lien générés par la suite, `8` semble être une bonne idée (98079714615416886934934209737619787751599303819750539264 soit 9*10^54 possibilitées totales),
+- `char_per_id` => Nombre de caractères a utiliser sur chaque ID de lien générés par la suite, `8` semble être une bonne idée (98079714615416886934934209737619787751599303819750539264 soit 9*10^54 possibilitées totales),
 
 
 - `matomo` => booléen qui détermine si Matomo est a utiliser sur l'instance
 - `matomo_siteid` => identifiant de site sur Matomo,
-- `matomo_url` => URL de matomo **tel que fournis par matomo** (`https://`/`http://` au début et doit finir par un `/`),
+- `matomo_url` => URL de Matomo **tel que fournis par matomo** (`https://`/`http://` au début et doit finir par un `/`),
 
 
 - `dashboard_username` => **to be done**,
