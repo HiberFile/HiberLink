@@ -3,7 +3,20 @@
 require "autoload.php";
 
 $argument = preg_split('/[\/].*[?]/', $_SERVER["REQUEST_URI"]);
-if (sizeof($argument) === 2) {
+if(empty($argument['1'])){
+    add_header();
+    ?>
+                    <img src="<?= env('ext_url') ?>/src/img/add.png" width="48" alt="+">
+                    <div class="center"><h4>Transformez votre lien dès maintenant.</h4></div>
+                    <form method="post" action="<?= env('ext_url') ?>/link.php">
+                        <center>
+                            <input placeholder="Lien original" type="text" name="link" class="border rounded-lg w-full px-2 py-1 h-14 mb-3 text-lg text-grey-darker leading-loose" required>
+                            <input id="buttonsend" type="submit" value="Transformation" name="submit" class="btn rounded-lg flex items-center mt-2">
+                        </center>
+                    </form>
+    <?php
+}
+elseif (sizeof($argument) === 2) {
     $argument = $argument[1];
 
     $dsn = "mysql:host=" . env("mysql_address") . ";dbname=" . env("mysql_databse") . ";port=".env("mysql_port").";charset=utf8mb4";
