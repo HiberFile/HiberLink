@@ -78,6 +78,7 @@ curl --user-agent "curl" -X POST -L "https://hiber.link/?IDENTIFIANT"
 - `mysql_password` => Mot de passe de l'utilisateur MySQL à utiliser.
 
 ## Testé et fonctionnel sur
+- Raspbian 9 + Apache 2.4 + PHP 7.3
 - Debian 10 + Apache 2.4 + PHP 7.3
 - Ubuntu 18.04 + Apache 2.4 + PHP 7.2
 - Arch Linux + Apache 2.4 + PHP 7.4
