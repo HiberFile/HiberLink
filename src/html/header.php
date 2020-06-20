@@ -13,10 +13,9 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     <!-- javascript -->
     <script src="<?= env('ext_url') ?>/src/js/clipboard.js"></script>
     <script src="<?= env('ext_url') ?>/src/js/main.js"></script>
-    <script src="<?= env('ext_url') ?>/src/js/sweetalert.js"></script>
 
     <!-- css -->
-    <link rel="stylesheet" type="text/css" href="<?= env('ext_url') ?>/src/css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="<?= env('ext_url') ?>/src/css/normalize.min.css"/>
     <link rel="stylesheet" type="text/css" href="<?= env('ext_url') ?>/src/css/main.css" />
 
     <!-- icons -->
@@ -40,11 +39,13 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
 
     <!-- meta -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="alternate" hreflang="fr" href="https://www.hiber.link">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
     <meta name="application-name" content="<?= env('title') ?>">
     <meta name="msapplication-tooltip" content="<?= env('title') ?>"/>
     <meta name="description" content="<?= env('title') ?> - Service de réduction de liens.">
+    <link rel="author" href="<?= env('ext_url') ?>/humans.txt" />
 
     <meta property="og:url" content="<?= env('ext_url') ?>">
     <meta property="og:type" content="website">
