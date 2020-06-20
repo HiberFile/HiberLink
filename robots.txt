@@ -1,0 +1,12 @@
+Sitemap: https://www.hiber.link/sitemap.xml
+
+User-agent: *
+Disallow: /src/
+Disallow: /.idea/
+Disallow: /setup.php
+Disallow: /apple-app-site-association
+Disallow: /env.php
+Disallow: /env.example.php
+Disallow: /autoload.php
+Disallow: /README.md
+Disallow: /.gitignore
