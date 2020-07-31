@@ -1,5 +1,5 @@
 /* HiberLink's main.css */
-/* Under AGPL-3.0 */
+/* Under GPL-3.0 */
 
 .center {
     display: block;
@@ -13,8 +13,20 @@
     transform: rotate(180deg);
 }
 
+.blue {
+    color: royalblue;
+    text-decoration: underline;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
+}
+
+hr {
+    display: block;
+    width: 95%;
+    background-color: #b1b1b3;
+    height: 2px;
 }
 
 

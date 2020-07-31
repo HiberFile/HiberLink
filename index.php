@@ -24,13 +24,27 @@ if (sizeof($argument) === 2) {
 
     $row = $req->fetch();
     if (isset($row['original'])) {
+        $original = $row['original'];
+        $prettier = preg_replace("/^htt(ps|p):\/\//i", "", $original);
+        $prettier = preg_replace("/(\/.*)+/i", "", $prettier);
+
         if (is_curl()) {
             die($row['original']);
         }
-        header("Status: 301 Moved Permanently", true, 301);
-        header("Location: ".$row['original']);
+        #header("refresh:5;url=" . $original);
         add_header();
-        echo $row['original'];
+        ?>
+        <div class="center">
+            <h1>HiberLink</h1><br>
+            <p>Vous allez être rediriger vers <code><?= $prettier ?></code> dans 5 secondes.</p>
+            <br><br>
+            <a href="<?= $original ?>" class="btn rounded-lg mt-2">Acceder directement au site</a>
+            <br><br><br><br>
+            <a class="btn rounded-lg mt-2" href="javascript:history.back()">Revenir en arrière</a>
+            <br><br><br>
+            <small class="blue outline"><a href="<?= env('ext_url') ?>/why-susp.php">Pourquoi je vois cette page ?</a></small>
+        </div>
+        <?php
     } else {
         add_header();
         ?>
